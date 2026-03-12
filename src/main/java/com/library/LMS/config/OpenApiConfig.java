@@ -19,6 +19,5 @@ public class OpenApiConfig {
         .description("REST API for LMS")
         .contact(new Contact().name("Ekesh").email("ekesh@gmail.com")));
 
-
     }
 }
