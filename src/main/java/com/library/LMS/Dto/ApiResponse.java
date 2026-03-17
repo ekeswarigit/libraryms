@@ -5,10 +5,13 @@ import java.time.LocalDateTime;
 import com.library.LMS.Payload.Status;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-
+import lombok.NoArgsConstructor;
+@Builder
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class ApiResponse<T> {
 
     private LocalDateTime timestamp;
@@ -17,6 +20,7 @@ public class ApiResponse<T> {
     private String error;
     private String message;
     private T data;
+
 
     // public ApiResponse(LocalDateTime timestamp, Status status,int code, String error, String message, T data) {
     //     this.timestamp = timestamp;
