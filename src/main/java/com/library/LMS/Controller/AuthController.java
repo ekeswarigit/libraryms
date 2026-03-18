@@ -10,16 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.library.LMS.Dto.ApiResponse;
 import com.library.LMS.Dto.AuthRequest;
 import com.library.LMS.Dto.AuthResponse;
-import com.library.LMS.Dto.BookResponse;
 import com.library.LMS.Dto.UserRequest;
-import com.library.LMS.Dto.UserResponse;
 import com.library.LMS.Entity.User;
-import com.library.LMS.Payload.Status;
 import com.library.LMS.Service.AuthService;
-import com.library.LMS.Util.UserMapper;
 import com.library.LMS.config.JwtUtil;
 import lombok.RequiredArgsConstructor;
 
@@ -36,34 +31,6 @@ public class AuthController {
 public String test() {
     return "Working";
 }
-
-    // @PostMapping("/register")
-    // public AuthResponse register(@RequestBody UserRequest request) {
-
-    //     System.out.println("Username: " + request.getUsername());
-    //     System.out.println("Email: " + request.getEmail());
-    //     System.out.println("Password: " + request.getPassword()); 
-
-    //     User user = authService.register(request);
-
-    //    return UserMapper.toResponse(user);
-    // }
-
-//     @PostMapping("/login")
-//     public AuthResponse login(@RequestBody AuthRequest request) {
-
-
-//         System.out.println("Username: " + request.getUsername());
-// System.out.println("Password: " + request.getPassword());
-
-//         authManager.authenticate(
-//                 new UsernamePasswordAuthenticationToken(
-//                         request.getUsername(),
-//                         request.getPassword()));
-//         String token = jwtUtil.generateToken(request.getUsername());
-
-//         return new AuthResponse(, token, token, token, token);
-//     }
  @PostMapping("/register")
     public ResponseEntity<AuthResponse> register(@RequestBody UserRequest request) {
 
@@ -81,7 +48,7 @@ public String test() {
          return ResponseEntity.ok(response);
     }
 
-    // ✅ LOGIN
+    //LOGIN
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
 

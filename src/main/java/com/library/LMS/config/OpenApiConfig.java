@@ -21,9 +21,9 @@ public class OpenApiConfig {
     
         return new OpenAPI()
                 .info(new Info()
-                        .title("Task Management API")
+                        .title("library Management API")
                         .version("1.0")
-                        .description("API documentation for Task Management System"))
+                        .description("API documentation for library Management System"))
                 .addSecurityItem(new SecurityRequirement().addList(SECURITY_SCHEME_NAME))
                 .components(new Components()
                         .addSecuritySchemes(SECURITY_SCHEME_NAME,
